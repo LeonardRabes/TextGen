@@ -1,6 +1,7 @@
 import os
 import numpy
 import tensorflow as tf
+import random
 
 def format_data(filename):
     CHAR_PER_BATCH = 10
@@ -25,6 +26,8 @@ def format_data(filename):
             print("End of Stream!")
             break
 
+    [data, label] = multiple_shuffle([data, label])
+
     border = int(len(label) * 0.85)
 
     numpy.save("train_data.npy", data[:border])
@@ -32,6 +35,21 @@ def format_data(filename):
 
     numpy.save("test_data.npy", data[border:])
     numpy.save("test_label.npy", label[border:])
+
+    print("Files saved!")
+
+
+def multiple_shuffle(lists):
+    rndRange = list(range(len(lists[0])))
+    random.shuffle(rndRange)
+
+    for li in lists:
+        for i, rnd in enumerate(rndRange):
+            buffer = li[i]
+            li[i] = li[rnd]
+            li[rnd] = buffer
+
+    return lists
 
 
 def byte2bin(byte):

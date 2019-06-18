@@ -21,6 +21,6 @@ def generate(model, init, length):
     return string
 
 
-model = tf.keras.models.load_model("textgen_rnn_1560869602.model")
+model = tf.keras.models.load_model("textgen_rnn_1560880124.model")
 out = generate(model, "B", 800)
 print(out)
