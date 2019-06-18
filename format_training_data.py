@@ -68,4 +68,4 @@ def bin2byte(bits):
     return byte
 
 
-format_data("speeches.txt")
+format_data("shakespeare.txt")

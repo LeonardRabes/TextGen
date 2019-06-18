@@ -106,5 +106,5 @@ venv.bak/
 #textgen
 *.npy
 *.model
-speeches.txt
+*.txt
 logs/*

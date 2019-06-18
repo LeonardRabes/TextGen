@@ -8,7 +8,8 @@ def create_model():
     model.add(tf.keras.layers.Dense(512, activation=tf.nn.relu))
     model.add(tf.keras.layers.Dense(256, activation=tf.nn.sigmoid))
 
-    model.compile(optimizer='adam',
+    opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-5)
+    model.compile(optimizer=opt,
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
     return model
