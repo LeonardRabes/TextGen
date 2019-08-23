@@ -1,2 +1,2 @@
 # TextGen
-Generating new text, by training an RNN on existing texts.
+Generating new text, by training an NN on existing texts.
