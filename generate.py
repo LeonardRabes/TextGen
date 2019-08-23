@@ -22,5 +22,5 @@ def generate(model, init, length):
 
 
 model = tf.keras.models.load_model("textgen_rnn_1560888955.model")
-out = generate(model, "Dackel", 800)
+out = generate(model, "I am a ", 800)
 print(out)
